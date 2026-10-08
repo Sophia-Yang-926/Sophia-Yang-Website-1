@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Sophia Yang's guide to the food of The Sims 4 City Living. Explore 27 recipes, mark your favorites and find your next dish."
+  >
+  <title>City Living Recipes | Sophia Yang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-name" href="#home">THE SIMS 4 CITY LIVING</a>
+      <a class="profile" href="#about-sophia" aria-label="About Sophia Yang">
+        <span>By Sophia Yang</span>
+        <img src="images/my%20avatar.webp" width="44" height="44" alt="Sophia's Sims avatar">
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#recipes">Recommended Menu</a>
+        <a href="#how">Eat First, Cook Later</a>
+        <a href="#spice">Spice Tolerance</a>
+        <a href="#stalls">All 27 Recipes</a>
+        <a href="#about-sophia">About the Author</a>
+        <a href="#next-meal">What's for Dinner?</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero-section" id="home" aria-labelledby="page-title">
+      <div class="hero container">
+        <div class="hero-copy">
+          <h1 id="page-title">San Myshuno <span>on a plate</span></h1>
+          <p>
+            I love how The Sims 4 lets you create people and take their lives in almost any
+            direction. It's a life simulation game, and City Living is my favorite expansion pack!
+            It brings your Sims to San Myshuno, a city full of festivals and food stalls. Exploring
+            all that food is the part I get most excited about.
+          </p>
+          <p>
+            These are the dishes I most want to share, along with how to learn their recipes and a
+            little help choosing what to try next.
+          </p>
+        </div>
+        <img
+          class="hero-image"
+          src="images/festival.webp"
+          width="1280"
+          height="720"
+          alt="Sims eating and chatting among colorful food stalls in San Myshuno"
+        >
+      </div>
+    </section>
+
+    <section class="menu-section section-divider band" id="recipes" aria-labelledby="menu-title">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="menu-title">Recommended Menu</h2>
+          <div class="tasting-progress">
+            <label for="tasting-progress"><span id="tried-count" aria-live="polite">0 of 11 tried</span></label>
+            <progress id="tasting-progress" value="0" max="11">0 of 11 tried</progress>
+          </div>
+        </div>
+        <p class="section-copy">
+          City Living has 27 street-food recipes to discover. These 11 dishes are my favorites. Find
+          something you'd like to try and tick it off when you do.
+        </p>
+        <form class="menu-tools" id="filter-form" role="search" aria-label="Find a dish">
+          <div class="field search-field">
+            <label for="recipe-search">Search dishes</label>
+            <input
+              id="recipe-search"
+              name="search"
+              type="search"
+              placeholder="Search by dish name"
+              autocomplete="off"
+            >
+          </div>
+          <div class="field cuisine-field">
+            <label for="stall-filter">Cuisine</label>
+            <select id="stall-filter" name="cuisine">
+              <option value="all">All cuisines</option>
+              <option value="Chinese">Chinese</option>
+              <option value="Filipino">Filipino</option>
+              <option value="Indian">Indian</option>
+              <option value="Japanese">Japanese</option>
+              <option value="Mexican">Mexican</option>
+              <option value="Moroccan">Moroccan</option>
+              <option value="Vietnamese">Vietnamese</option>
+            </select>
+          </div>
+          <button class="button quiet" type="reset">Clear filters</button>
+        </form>
+        <p class="results-count" id="results-count" role="status">Showing 6 of 11 dishes</p>
+        <div class="recipe-list" id="recipe-list"></div>
+        <button
+          class="button quiet show-menu"
+          id="show-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="recipe-list"
+        >Show all 11 dishes</button>
+        <p class="empty-message" id="empty-message" hidden>
+          No dishes found. Try another name or clear the filters.
+        </p>
+        <noscript><p>Turn on JavaScript to use the menu and dinner picker. All 27 recipe names and the learning guide are available below.</p></noscript>
+      </div>
+    </section>
+
+    <section class="learn-section section-divider" id="how" aria-labelledby="learn-title">
+      <div class="container">
+        <h2 id="learn-title">Eat First, Cook Later</h2>
+        <p class="section-copy">
+          When your Sim eats a new dish from a city food stall, they learn its recipe and can cook
+          it at home.
+        </p>
+        <div class="learn-layout">
+          <img
+            class="gameplay-image"
+            src="images/tastingfood.jpg"
+            width="1920"
+            height="1080"
+            loading="lazy"
+            alt="Two Sims sampling street food at a festival in San Myshuno"
+          >
+          <ol class="steps">
+            <li><strong>Find a food stall</strong><span>Visit San Myshuno and see what's on the menu.</span></li>
+            <li><strong>Try something new</strong><span>Order a dish and let your Sim eat it.</span></li>
+            <li><strong>Make it at home</strong><span>Look for the newly learned recipe in your Sim's cooking menu.</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="spice-section section-divider green-band" id="spice" aria-labelledby="spice-title">
+      <div class="container">
+        <h2 id="spice-title">Spice Tolerance</h2>
+        <div class="spice-copy">
+          <p>
+            Some City Living dishes are spicy enough to make an unprepared Sim breathe fire. Eating
+            spicy food helps Sims build a hidden tolerance over time.
+          </p>
+          <p>
+            Keep trying spicy dishes and your Sim can earn the Spice Hound trait. The Spice
+            Festival's Curry Challenge is another reason to get some practice first.
+          </p>
+        </div>
+        <div class="spice-layout">
+          <img
+            class="gameplay-image"
+            src="images/spice!.jpg"
+            width="1920"
+            height="1080"
+            loading="lazy"
+            alt="A Sim breathes fire after tasting spicy food at the Spice Festival"
+          >
+          <aside class="spice-reward" aria-labelledby="spice-reward-title">
+            <h3 id="spice-reward-title">Spice Hound</h3>
+            <p>
+              Sims with this reward trait can enjoy spicy food without the usual discomfort, and a
+              spicy meal makes them happy.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="stall-section section-divider" id="stalls" aria-labelledby="stalls-title">
+      <div class="container">
+        <h2 id="stalls-title">All 27 Recipes</h2>
+        <p class="section-copy">
+          Curious about the rest? Here are all 27 City Living street-food recipes listed in EA's
+          cooking guide, grouped into seven cuisines found at different food stalls around San
+          Myshuno.
+        </p>
+        <table>
+          <caption class="visually-hidden">City Living recipes by cuisine</caption>
+          <thead>
+            <tr>
+              <th scope="col">Cuisine</th>
+              <th scope="col">Count</th>
+              <th scope="col">Recipes</th>
+              <th scope="col">Flavors &amp; textures</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Chinese</th>
+              <td class="recipe-total">4<span class="mobile-label"> recipes</span></td>
+              <td>
+                <ul class="table-recipes">
+                  <li>Egg Rolls</li>
+                  <li>Mapo Tofu with Pork</li>
+                  <li>Sweet and Sour Pork</li>
+                  <li>Sweet and Sour Eggplant</li>
+                </ul>
+              </td>
+              <td class="cuisine-note">Crisp, silky and tender textures, with sweet-and-sour flavors and a little heat.</td>
+            </tr>
+            <tr>
+              <th scope="row">Filipino</th>
+              <td class="recipe-total">4<span class="mobile-label"> recipes</span></td>
+              <td>
+                <ul class="table-recipes">
+                  <li>Siopao</li>
+                  <li>Lumpia</li>
+                  <li>Ensaymadas</li>
+                  <li>Pork Adobo</li>
+                </ul>
+              </td>
+              <td class="cuisine-note">Soft, fluffy and crisp textures, from gently sweet to rich and tangy.</td>
+            </tr>
+            <tr>
+              <th scope="row">Indian</th>
+              <td class="recipe-total">3<span class="mobile-label"> recipes</span></td>
+              <td>
+                <ul class="table-recipes">
+                  <li>Curry</li>
+                  <li>Samosa</li>
+                  <li>Bhel Puri</li>
+                </ul>
+              </td>
+              <td class="cuisine-note">Fragrant spices and warm, savory flavors, with creamy and crunchy textures.</td>
+            </tr>
+            <tr>
+              <th scope="row">Japanese</th>
+              <td class="recipe-total">4<span class="mobile-label"> recipes</span></td>
+              <td>
+                <ul class="table-recipes">
+                  <li>Ramen</li>
+                  <li>Dango</li>
+                  <li>Nigiri</li>
+                  <li>Pufferfish Nigiri</li>
+                </ul>
+              </td>
+              <td class="cuisine-note">Savory umami and gentle sweetness, with springy, chewy and soft textures.</td>
+            </tr>
+            <tr>
+              <th scope="row">Mexican</th>
+              <td class="recipe-total">6<span class="mobile-label"> recipes</span></td>
+              <td>
+                <ul class="table-recipes">
+                  <li>Taquitos</li>
+                  <li>Empanadas</li>
+                  <li>Bean and Cheese Burrito</li>
+                  <li>Chicken Burrito</li>
+                  <li>Spinach Wrapped Veggie Burrito</li>
+                  <li>Tomato Wrapped Veggie Burrito</li>
+                </ul>
+              </td>
+              <td class="cuisine-note">Hearty, savory flavors, crisp edges and soft, rich centers.</td>
+            </tr>
+            <tr>
+              <th scope="row">Moroccan</th>
+              <td class="recipe-total">3<span class="mobile-label"> recipes</span></td>
+              <td>
+                <ul class="table-recipes">
+                  <li>Brochette</li>
+                  <li>Merguez</li>
+                  <li>Tajine</li>
+                </ul>
+              </td>
+              <td class="cuisine-note">Warm spices, deeply savory flavors and tender, juicy textures.</td>
+            </tr>
+            <tr>
+              <th scope="row">Vietnamese</th>
+              <td class="recipe-total">3<span class="mobile-label"> recipes</span></td>
+              <td>
+                <ul class="table-recipes">
+                  <li>Goi Cuon</li>
+                  <li>Banh Mi</li>
+                  <li>Pho</li>
+                </ul>
+              </td>
+              <td class="cuisine-note">Fresh herbs, bright flavors and a mix of crisp and tender textures.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="about-section section-divider band" id="about-sophia" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">About the Author</h2>
+        <div class="about-layout">
+          <div class="avatar-profile">
+            <div class="avatar-frame">
+              <img
+                src="images/my%20avatar.webp"
+                width="250"
+                height="250"
+                alt="Marie Simmons, a brown-haired Sim wearing a red cardigan"
+              >
+            </div>
+            <details class="avatar-details">
+              <summary>About this avatar</summary>
+              <p class="avatar-note">
+                Marie Simmons from The Sims 4: Parenthood. I think she looks a little like me!
+              </p>
+            </details>
+          </div>
+          <div class="about-copy">
+            <h3>Sophia Yang</h3>
+            <p>
+              I've been playing The Sims for ten years, and I love cooking just as much! I made this
+              website to bring those two interests together and share my favorite part of City
+              Living: the food. I hope you find something here you'd love to try.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-section section-divider" id="next-meal" aria-labelledby="next-title">
+      <div class="container">
+        <h2 id="next-title">What's for Dinner?</h2>
+        <p class="section-copy">
+          Not sure what to eat today? Choose from my recommendations, or let a random draw decide!
+        </p>
+        <div class="next-layout">
+          <div class="next-copy">
+            <form id="meal-form" aria-describedby="meal-filter-help">
+              <div class="meal-fields">
+                <div class="field">
+                  <label for="meal-flavor">Flavor</label>
+                  <select id="meal-flavor" name="flavor">
+                    <option value="all">Anything sounds good</option>
+                    <option value="savory">Savory</option>
+                    <option value="sweet-sour">Sweet and sour</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="meal-diet">Diet</label>
+                  <select id="meal-diet" name="diet">
+                    <option value="all">No preference</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="lactose-free">Lactose-free</option>
+                    <option value="vegetarian-lactose-free">Vegetarian &amp; lactose-free</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="meal-heat">Spice preference</label>
+                  <select id="meal-heat" name="heat">
+                    <option value="all">Either is fine</option>
+                    <option value="not-spicy">Not spicy</option>
+                    <option value="spicy">Spicy</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="meal-stall">Cuisine</label>
+                  <select id="meal-stall" name="cuisine">
+                    <option value="all">Surprise me</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Filipino">Filipino</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Moroccan">Moroccan</option>
+                    <option value="Vietnamese">Vietnamese</option>
+                  </select>
+                </div>
+              </div>
+              <label class="check-label" for="untried-only">
+                <input type="checkbox" id="untried-only" name="untried" checked>
+                Only dishes I haven't tried
+              </label>
+              <p id="meal-match-count" class="results-count" role="status">11 dishes match</p>
+              <div class="meal-actions">
+                <button class="button primary" type="submit">Draw a Random Dish</button>
+                <button class="button quiet" type="reset">Reset preferences</button>
+              </div>
+            </form>
+          </div>
+          <div class="meal-result" id="meal-result" role="status" aria-live="polite" aria-atomic="true">
+            <div class="meal-preview">
+              <img src="images/empanadas.png" width="171" height="158" alt="Empanadas">
+              <img src="images/ramen.png" width="149" height="132" alt="Ramen">
+              <img src="images/puri.png" width="152" height="133" alt="Bhel Puri">
+            </div>
+            <p class="result-title">Ready for a random pick?</p>
+            <p class="result-description">Set your filters, then select Draw a Random Dish.</p>
+          </div>
+        </div>
+        <p class="filter-help" id="meal-filter-help">
+          (Diet and spice filters use in-game labels, not real-world dietary advice.)
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        This website was created by Sophia Yang. It uses official The Sims 4 images and edited
+        images from in-game screenshots.
+      </p>
+      <details class="credits">
+        <summary>Sources &amp; image credits</summary>
+        <ul>
+          <li><a href="https://help.ea.com/en/articles/the-sims/the-sims-4/cooking-skill/">EA Help: recipe names and learning recipes</a></li>
+          <li><a href="https://www.ea.com/amp/news/14-reasons-to-love-festivals-in-the-sims-4">EA: festivals, the Curry Challenge and the two food-festival screenshots</a></li>
+          <li><a href="https://sims.fandom.com/wiki/Cooking_(The_Sims_4)">The Sims Wiki: game recipe properties</a></li>
+          <li><a href="https://www.carls-sims-4-guide.com/forum/index.php?topic=28350.0">Carl's Sims Forum: vegetarian-safe dishes</a></li>
+          <li><a href="https://simsvip.com/sims-4-city-living-guide/">SimsVIP: food images and the Spice Hound trait</a></li>
+          <li><a href="https://forums.ea.com/discussions/the-sims-4-general-discussion-en/list-of-the-27-new-recipes/555520">EA Forums community guide: food-stall categories</a></li>
+          <li><a href="https://store.steampowered.com/app/1235731/The_Sims_4_City_Living/">EA / Maxis on Steam: festival screenshot</a></li>
+          <li><a href="https://simmingsimplified.com/sims-4-city-native-aspiration/">Simming Simplified: screenshot of the game's recipe-learning notification</a></li>
+          <li><a href="https://sims.fandom.com/wiki/Marie_Simmons">The Sims Wiki: Marie Simmons</a></li>
+        </ul>
+        <p>
+          Recipe names come from the game. Short dish summaries, flavor groups and the table's
+          flavor notes are written for this guide, not quoted official descriptions. Dietary labels
+          follow documented game properties. Spice labels follow The Sims Wiki's Food Stall Recipes
+          table.
+        </p>
+        <p>
+          Lactose-free follows the documented in-game label and does not mean dairy-free.
+          Gluten-free and dairy-free options are not included because these properties have not been
+          verified.
+        </p>
+        <p>
+          The food cutouts and character image were supplied by Sophia. Matching food images appear
+          in the SimsVIP guide. The avatar is Marie Simmons from The Sims 4: Parenthood. The
+          screenshots in the learning and spice sections come from EA's festival article. The Sims 4
+          game imagery belongs to EA / Maxis.
+        </p>
+        <p>This website is not endorsed by or affiliated with EA or its licensors.</p>
+      </details>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
